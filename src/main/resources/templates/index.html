@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot web</title>
+</head>
+<body>
+<div style="display: flex">
+    <div style="flex: 0.1">
+        <form action="/sortByArrays" method="post">
+            <button type="submit" >Sort By Arrays</button>
+        </form>
+    </div>
+    <div style="flex: 0.1">
+        <form action="/bubbleSort" method="post">
+            <button type="submit">Bubble Sort</button>
+        </form>
+    </div>
+    <div style="flex: 0.1">
+        <form action="/selectionSort" method="post">
+            <button type="submit">Selection Sort</button>
+        </form>
+    </div>
+    <div style="flex: 0.1">
+        <form action="/mergeSort" method="post">
+            <button type="submit">Merge Sort</button>
+        </form>
+    </div>
+    <div style="flex: 0.3">
+        <form action="/sortByStream" method="post">
+            <button type="submit" >Sort By Stream</button>
+        </form>
+    </div>
+
+</div>
+<br>
+<br>
+<form action="/list" method="get">
+    <button type="submit" style="background: red">Reset</button>
+</form>
+
+<div style="display: flex">
+    <div style="flex: 1">
+        <h1 style="margin-right: 40px">Danh sách 1000 phần tử ngẫu nhiên</h1>
+        <ol>
+            <!-- Sử dụng Thymeleaf để lặp qua danh sách và hiển thị các phần tử -->
+            <li th:each="item : ${listRandom}" th:text="${item}"></li>
+        </ol>
+    </div>
+    <div style="flex: 2">
+
+        <h1 style="margin-left: 40px">Mảng đã sắp xếp</h1>
+        <ol style="margin-left: 40px">
+            <!-- Sử dụng Thymeleaf để lặp qua mảng đã sắp xếp và hiển thị các phần tử -->
+            <li th:each="item : ${listRandomFinal}" th:text="${item}"></li>
+        </ol>
+    </div>
+
+</div>
+</body>
+</html>
