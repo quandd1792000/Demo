@@ -35,6 +35,9 @@ public class HomeController {
 
     @PostMapping("/sortByArrays")
     public String sortByArrays(Model model) {
+         if(listRandomFinal==null){
+            return "index";
+        }
         Arrays.sort(listRandomFinal);
         model.addAttribute("listRandomFinal", listRandomFinal);
         model.addAttribute("listRandom", listRandomFinalnotSort);
@@ -44,6 +47,9 @@ public class HomeController {
 
     @PostMapping("/bubbleSort")
     public String bubbleSort(Model model) {
+         if(listRandomFinal==null){
+            return "index";
+        }
         for (int i = 0; i < 1000 - 1; i++)
             for (int j = 0; j < 1000 - i - 1; j++)
                 if (listRandomFinal[j].compareTo(listRandomFinal[j + 1]) >0) {
@@ -58,6 +64,9 @@ public class HomeController {
     }
     @PostMapping ("/selectionSort")
     public String selectionSort(Model model) {
+         if(listRandomFinal==null){
+            return "index";
+        }
         for (int i = 0; i < 1000 - 1; i++) {
             int min_idx = i;
             for (int j = i + 1; j < 1000; j++)
@@ -75,6 +84,9 @@ public class HomeController {
     }
     @PostMapping("/mergeSort")
     public String mergeSort(Model model) {
+         if(listRandomFinal==null){
+            return "index";
+        }
         service service = new service();
         service.sort(listRandomFinal,0,999);
         model.addAttribute("listRandomFinal", listRandomFinal);
@@ -84,6 +96,9 @@ public class HomeController {
     }
     @PostMapping("/sortByStream")
     public String sortByStream(Model model) {
+         if(listRandomFinal==null){
+            return "index";
+        }
         List<String> listSort = List.of(listRandomFinal);
         List<String> sortedList = listSort.stream().sorted().collect(Collectors.toList());
         model.addAttribute("listRandomFinal", sortedList);
