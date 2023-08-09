@@ -5,6 +5,7 @@
     <title>Spring Boot web</title>
 </head>
 <body>
+<div style="background-color: aquamarine">
 <div style="display: flex">
     <div style="flex: 0.1">
         <form action="/sortByArrays" method="post">
@@ -40,22 +41,26 @@
 </form>
 
 <div style="display: flex">
-    <div style="flex: 1">
+    <div style="flex: 2">
+        <div style="background-color: lightskyblue">
         <h1 style="margin-right: 40px">Danh sách 1000 phần tử ngẫu nhiên</h1>
         <ol>
             <!-- Sử dụng Thymeleaf để lặp qua danh sách và hiển thị các phần tử -->
             <li th:each="item : ${listRandom}" th:text="${item}"></li>
         </ol>
+        </div>
     </div>
     <div style="flex: 2">
-
-        <h1 style="margin-left: 40px">Mảng đã sắp xếp</h1>
-        <ol style="margin-left: 40px">
+        <div style="background-color: greenyellow">
+        <h1>Mảng đã sắp xếp</h1>
+        <ol >
             <!-- Sử dụng Thymeleaf để lặp qua mảng đã sắp xếp và hiển thị các phần tử -->
             <li th:each="item : ${listRandomFinal}" th:text="${item}"></li>
         </ol>
+        </div>
     </div>
 
+</div>
 </div>
 </body>
 </html>
